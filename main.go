@@ -1,12 +1,16 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"pc_vue/routers"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
 	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
-		c.String(200, "Hello World")
-	})
+	// 路由配置
+	//用户
+	routers.UserRouters(r)
 
 	r.Run(":8000")
 }
